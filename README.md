@@ -1,1 +1,1 @@
-# exercicios-jpa
+# Exercicios usando JPA
