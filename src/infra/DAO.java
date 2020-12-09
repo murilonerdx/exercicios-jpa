@@ -44,6 +44,9 @@ public class DAO<E> {
 		em.persist(entidade);
 		return this;
 	}
+	public E obterPorID(Object id) {
+		return em.find(classe, id);
+	}
 	
 	public DAO<E> incluirAtomico(E entidade){
 		return this.abrirT().incluir(entidade).fecharT();

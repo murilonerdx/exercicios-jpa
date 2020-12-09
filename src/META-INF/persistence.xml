@@ -9,6 +9,10 @@
         <mapping-file>META-INF/persistence.xml</mapping-file>
         <class>modelo.basico.Usuario</class>
         <class>modelo.basico.Produto</class>
+        <class>modelo.umpraum.Assento</class>
+        <class>modelo.umpraum.Cliente</class>
+        <class>modelo.umpramuitos.ItemPedido</class>
+        <class>modelo.umpramuitos.Pedido</class>
         <properties>
             <property name="javax.persistence.jdbc.driver"
                 value="com.mysql.jdbc.Driver"/>
