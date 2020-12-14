@@ -5,6 +5,7 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="wm">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <mapping-file>META-INF/consultas.xml</mapping-file>
         
         <mapping-file>META-INF/persistence.xml</mapping-file>
         <class>modelo.basico.Usuario</class>
@@ -13,6 +14,10 @@
         <class>modelo.umpraum.Cliente</class>
         <class>modelo.umpramuitos.ItemPedido</class>
         <class>modelo.umpramuitos.Pedido</class>
+        <class>modelo.muitospramuitos.Sobrinho</class>
+        <class>modelo.muitospramuitos.Tio</class>
+        <class>modelo.muitospramuitos.Ator</class>
+        <class>modelo.muitospramuitos.Filme</class>
         <properties>
             <property name="javax.persistence.jdbc.driver"
                 value="com.mysql.jdbc.Driver"/>
