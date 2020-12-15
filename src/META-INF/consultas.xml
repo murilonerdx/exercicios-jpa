@@ -8,15 +8,34 @@
 		</query>
 	</named-query>
 	
+	
+	<named-query name="ObterFilmesComNotaMenorQue">
+        <query>select distinct f from Filme f
+			join fetch f.atores
+			where f.nota >= :nota</query>	
+    </named-query>
+    
+	<named-query name="Country.findAll">
+        <query>SELECT c from Country c</query>
+    </named-query>
+	
 	<named-native-query name="ObterMediaGeralDosFilmes" result-set-mapping="NotaFilmeMap">
 		<query>
 			select avg(nota) as media from wm.filmes
 		</query>
 	</named-native-query>
 	
+	
+	
+	
+	
 	<sql-result-set-mapping name="NotaFilmeMap">
 		<constructor-result target-class="modelo.consulta.NotaFilme">
 			<column name="media" class="java.lang.Double"/>
 		</constructor-result>
 	</sql-result-set-mapping>
+	
+
+    
+    
 </entity-mappings>

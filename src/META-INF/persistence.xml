@@ -18,6 +18,10 @@
         <class>modelo.muitospramuitos.Tio</class>
         <class>modelo.muitospramuitos.Ator</class>
         <class>modelo.muitospramuitos.Filme</class>
+     	<class>modelo.basico.composicao.Fornecedor</class>
+     	<class>modelo.basico.composicao.Endereco</class>
+     	<class>modelo.basico.composicao.Funcionario</class>
+     	<class>teste.consulta.Country</class>
         <properties>
             <property name="javax.persistence.jdbc.driver"
                 value="com.mysql.jdbc.Driver"/>

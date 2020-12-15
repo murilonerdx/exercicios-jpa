@@ -10,14 +10,20 @@ public class ObterFilmes {
 		DAO<Filme> dao = new DAO<>(Filme.class);
 		
 		List<Filme> filmesMaioresQue = dao.consultar("ObterFilmesComNotaMaiorQue", "nota", 8.5);
-		List<Filme> filmesMenoresQue = dao.consultar("ObterFilmesComNotaMenorQue", "nota", 8.5);
+		List<Filme> filmesMenoresQue = dao.consultar("ObterFilmesComNotaMenorQue", "nota", 8.0);
 		for(Filme filme: filmesMaioresQue) {
 			System.out.println(filme.getNome());
 		}
-		System.out.println("Filmes menores que 8.5");
-		for(Filme filme: filmesMenoresQue) {
-			System.out.println(filme.getNome());
+		
+		
+		System.out.println("Filmes menores que " + filmesMaioresQue.get(filmesMaioresQue.size() - 1).getNota());
+		for(Filme filme2: filmesMenoresQue) {
+			System.out.println(filme2.getNome());
 		}
+		
+		
+		
+		
 		
 		
 		

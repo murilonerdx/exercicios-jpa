@@ -7,6 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import modelo.basico.Usuario;
+import teste.consulta.Country;
+
 public class DAO<E> {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
@@ -27,6 +30,7 @@ public class DAO<E> {
 	
 	public DAO(Class<E> classe) {
 		this.classe = classe;
+		
 		em = emf.createEntityManager();
 	}
 	
@@ -77,14 +81,29 @@ public class DAO<E> {
 		
 		for (int i = 0; i < params.length; i+= 2) {
 			query.setParameter(params[i].toString(), params[i + 1]);
+		
 		}
+		
 		return query.getResultList();
 
 	}
 	
 	public E consultarUm(String nomeConsulta, Object... params){
 		List<E> lista = consultar(nomeConsulta, params);
-		return lista.isEmpty() ? null: lista.get(0);
+		return lista.isEmpty() || lista.toString() == null ? null : lista.get(0);
+	}
+	
+	public void removerPaisPorId(long id) {
+
+		Country pais = em.find(Country.class, id);
+		
+		if(pais != null) {
+			em.getTransaction().begin();
+			em.remove(pais);
+			em.getTransaction().commit();
+		}
+		
+		
 	}
 	
 }

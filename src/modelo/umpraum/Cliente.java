@@ -19,7 +19,7 @@ public class Cliente {
 	private String nome;
 
 	@OneToOne(cascade = {CascadeType.PERSIST})
-	@JoinColumn(name = "assento_id", unique = true)
+	@JoinColumn(name = "assento_id", unique = true, nullable = false)
 	private Assento assento;
 	
 	public Cliente() {
